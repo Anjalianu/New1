@@ -1,0 +1,59 @@
+Equi-Join
+
+select e.eid, e.name, f.salary from emp1 e,emp2 f where e.eid=f.eid ;
+
+select e.eid, e.name, f.salary from emp1 e inner join emp2 f on e.eid=f.eid ;
+
+select e.eid, e.name, f.salary from emp1 e  join emp2 f on e.eid=f.eid ;
+
+
+NATURAL JOIN
+
+select eid, name, salary from emp1  natural join emp2  ;
+
+
+NON-EQUI JOIN
+
+select e.eid, e.name, f.salary from emp1 e,emp2 f where e.eid>f.eid ;
+
+
+LEFT OUTER JOIN
+
+select e.eid,e.name,f.salary from emp1 e left join emp2 f on e.eid=f.eid;
+
+select e.eid,e.name,f.salary from emp1 e left outer join emp2 f on e.eid=f.eid;
+
+select e.eid,e.name,f.salary from emp1 e, emp2 f where e.eid=f.eid(+);
+
+
+
+RIGHT OUTER JOIN
+select e.eid,e.name,f.salary from emp1 e right join emp2 f on e.eid=f.eid;
+
+select e.eid,e.name,f.salary from emp1 e right outer join emp2 f on e.eid=f.eid;
+
+select e.eid,e.name,f.salary from emp1 e, emp2 f where e.eid(+)=f.eid;
+
+
+
+FULL OUTER JOIN
+select e.eid,e.name,f.salary from emp1 e full outer join emp2 f on e.eid=f.eid;
+
+select e.eid,e.name,f.salary from emp1 e full join emp2 f on e.eid=f.eid;
+
+
+CROSS JOIN
+
+select *  from emp1 ,emp2 ;
+ 
+select e.eid,f.salary from emp1 e,emp2 f;
+
+select e.eid,f.salary from emp1 e cross join emp2 f;
+
+
+SELF JOIN
+
+SELECT a.eid AS "Emp_ID",a.name AS "Employee Name",  
+a.s_id AS "Supervisor ID",b.name AS "Supervisor Name"  
+FROM emp3 a, emp3 b  WHERE a.s_id=b.eid order by a.eid; 
+ 
